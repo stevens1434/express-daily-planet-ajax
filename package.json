@@ -1,0 +1,24 @@
+{
+  "name": "express-daily-planet-ajax",
+  "version": "1.0.0",
+  "description": "Implement the ability to add/remove articles using AJAX and proper RESTful verbs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevens1434/express-daily-planet-ajax.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevens1434/express-daily-planet-ajax/issues"
+  },
+  "homepage": "https://github.com/stevens1434/express-daily-planet-ajax#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4"
+  }
+}

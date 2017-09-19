@@ -1,5 +1,15 @@
 <h1><%= article.title %></h1>
 
 <div class="well">
+<a href="/articles/:index/edit" class="btn btn-primary">Edit Article</a>
   <p><%= article.body %></p>
 </div>
+
+<p>Use this form to edit text</p>
+<form method="POST" action="/articles/:idx">
+  <label for="headerText">Title</label>
+  <input type="text" name="titleText">
+  <label for="paragraphText">Body</label>
+  <input id="paragraphText" type="bodyText" name="name">
+  <input id="submit" type="submit">
+</form>s

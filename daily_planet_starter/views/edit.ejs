@@ -1,0 +1,11 @@
+<li>value=“<%= article.title %>” <%= headerText %>  </li>
+<li>value=“<%= article.p %>” <%= headerText %>  </li>
+
+<p>Use this form to edit text</p>
+<form method="POST" action="/articles/:idx">
+  <label for="headerText">title</label>
+  <input type="text" name="type">
+  <label for="paragraphText">body</label>
+  <input id="paragraphText" type="text" name="name">
+  <input id="headerText" type="submit">
+</form>

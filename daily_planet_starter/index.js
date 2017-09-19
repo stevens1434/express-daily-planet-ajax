@@ -1,7 +1,8 @@
-var express = require('express');
+var express = require('express'); //connects to other files
 var partials = require('express-partials'); // https://github.com/publicclass/express-partials
-var bodyParser = require('body-parser');
-var app = express();
+var bodyParser = require('body-parser'); //connects to other files
+var app = express(); //connects to other files
+var fs = require('fs')
 
 app.use(partials());
 app.set('view engine', 'ejs');
@@ -43,6 +44,40 @@ app.post('/articles', function(req, res) {
 app.get('/about', function(req, res) {
     res.render('about');
 });
+
+
+app.delete('/articles/:idx', function(req, res) {
+  var delIndex = req.params.idx;
+  delIndex = parseInt(delIndex);
+    articles.splice(delIndex,1);
+  });
+
+app.put('/animals/:idx/index', function(req, res) {
+  var articleId = req.params.id;
+  var articles = fs.readFileSync('./data.json');
+  articles = JSON.parse(animals);
+  articles[articleId].h1 = req.body.h1;
+  articles[articleId].p = req.body.p;
+  console.log(animals);
+  // Write the object back to the file
+  fs.writeFileSync('./edit.ejs', JSON.stringify(articles));
+  res.send({message: 'success'});
+});
+
+
+//locate the new text
+//parse the new text
+//add the new text
+
+
+
+app.post('/articles/:idx', function(req, res) { //backend -- express route
+    var articles = fs.readFileSync('./show.ejs'); //read animals file
+    articles.push(req.params.idx); //push item to animals array //save animals to the data.json file //stringify is opposite of JSON.parse
+    res.redirect('/articles/:index'); //redirect to the GET /animals route (index)
+});
+
+
 
 app.listen(3000, function() {
     console.log("You're listening to the smooth sounds of port 3000 in the morning");
